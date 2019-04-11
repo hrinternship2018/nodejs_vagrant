@@ -1,6 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+system('if [ -d ./syncfiles ]; then echo ''; else mkdir syncfiles; fi')
+
 Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/trusty64"
