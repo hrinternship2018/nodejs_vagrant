@@ -1,8 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-system("./generate.sh")
-
 Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/trusty64"
@@ -10,7 +8,8 @@ Vagrant.configure("2") do |config|
 
   config.vm.network "private_network", ip: "10.10.10.110"
 
-  config.vm.synced_folder "./syncfiles", "/syncfiles"
+  config.vm.synced_folder "./syncfiles", "/syncfiles", create: true
+  config.vm.synced_folder ".", "/vagrant" , disabled: true
   
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "2048"

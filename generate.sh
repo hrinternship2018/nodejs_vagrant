@@ -1,1 +1,0 @@
-if [ -d ./syncfiles ]; then echo ''; else mkdir syncfiles; fi;
